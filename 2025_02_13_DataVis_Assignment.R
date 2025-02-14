@@ -100,8 +100,6 @@ ggplot(myco, aes(x=Treatment, y=DON, fill = Cultivar)) +
   xlab("") +
   facet_wrap(~Cultivar)
 
-
-
 #I would choose to use the bar plot because it gives a better overview of the data and is 
 #easy to view and understand. The bar graph had too much going on, and it was harder to view the data as easy.
 
