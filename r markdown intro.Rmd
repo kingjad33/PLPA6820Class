@@ -2,11 +2,11 @@
 title: "R markdown Intro Help"
 output: 
   
+  md_document: #has fire .md which is what we want, edit readme with markdown
+    variant: gfm 
   html_document: 
     toc: true #includes table of content
     toc_float: true
-  md_document: #has fire .md which is what we want, edit readme with markdown
-    variant: gfm 
   pdf_document: #different file type
   word_document: #different file type
 date: "2025-02-26"

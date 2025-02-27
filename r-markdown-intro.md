@@ -59,7 +59,23 @@ can type stuff under and collapse with arrow
 
 #### style and emphasis
 
+*this is italics*
+
+**this is bold**
+
+**this is also bold**
+
+- one item
+- two items
+  - one subitem
+
 ### Third level header
+
+## Links
+
+[link to my github](https://github.com/kingjad33)
+
+\##Images ![](image%20has%20to%20be%20in%20directory)
 
 ## R Markdown
 
