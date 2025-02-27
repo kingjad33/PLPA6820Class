@@ -1,0 +1,86 @@
+---
+title: "R markdown Intro Help"
+output: 
+  
+  html_document: 
+    toc: true #includes table of content
+    toc_float: true
+  md_document: #has fire .md which is what we want, edit readme with markdown
+    variant: gfm 
+  pdf_document: #different file type
+  word_document: #different file type
+date: "2025-02-26"
+---
+this is an example of r code
+```{r chunk_name}
+#this is r code
+summary(mtcars)
+
+```
+
+this is to include plots
+```{r}
+library(ggplot2)
+
+data("mtcars")
+ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_smooth(method=lm, se= FALSE) +
+  geom_point(aes(color= wt)) + 
+  xlab("Weight") + 
+  ylab("Miles per gallon") + 
+  scale_colour_gradient(low= "forestgreen", high= "black")
+```
+
+R markdown formatting options
+
+# First level header
+  can type stuff under and collapse with arrow
+
+## Second level header
+#### style and emphasis
+*this is italics*
+
+**this is bold**
+
+__this is also bold__
+
+- one item
+- two items
+    - one subitem 
+  
+### Third level header
+
+## Links
+
+[link to my github](https://github.com/kingjad33)
+
+##Images
+![](image has to be in directory)
+
+```{r}
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
