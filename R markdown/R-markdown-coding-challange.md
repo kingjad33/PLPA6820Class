@@ -1,5 +1,9 @@
 ## R Markdown
 
+1.  YAML header: top part of the markdown file that specifies the format
+    of the document
+2.  Literate programming: combination of English writing and code
+
 # [Find data here](https://doi.org/10.1094/PDIS-06-21-1253-RE)
 
 this is the code from coding challenge 3 question 5
@@ -140,3 +144,5 @@ Graph with X15ADON
     ## (`geom_point()`).
 
 ![](R-markdown-coding-challange_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+[github link
+here](https://github.com/kingjad33/PLPA6820Class/tree/main/R%20markdown)

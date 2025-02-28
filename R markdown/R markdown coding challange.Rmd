@@ -1,9 +1,9 @@
 ---
 title: "R markdown coding challange"
 output: 
-  md_document:
   word_document:
     toc: true
+  md_document:
   html_document:
   pdf_document: 
     toc: true
@@ -16,7 +16,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
-# [Find data here](https://doi.org/10.1094/PDIS-06-21-1253-RE)
+a.	YAML header: top part of the markdown file that specifies the format of the document 
+b.	Literate programming: combination of English writing and code 
+
+[Find data here](https://doi.org/10.1094/PDIS-06-21-1253-RE)
 
 this is the code from coding challenge 3 question 5
 ```{r}
@@ -79,3 +82,4 @@ graph7= graph4 + geom_pwc(aes(group=Treatment2, method= "t_test", label= "p.adj.
 ggarrange(graph5,graph6,graph7, ncol=3, nrow=1, common.legend = TRUE)
 ```
 
+[github link here](https://github.com/kingjad33/PLPA6820Class/tree/main/R%20markdown)
