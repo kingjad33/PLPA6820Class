@@ -3,6 +3,7 @@ Reproducible Science Class
 
 [Access README file here](https://github.com/kingjad33/PLPA6820Class/blob/main/README.md)
 
+```
 ├── 2025_02_06_IntroRAssign.R
 ├── 2025_02_13_DataVis_Assignment.R
 ├── 2025_02_20_DataVis_Assignment2.R
@@ -28,4 +29,10 @@ Reproducible Science Class
 │           ├── pressure-1.png
 │           └── unnamed-chunk-1-1.png
 └── README.md
+```
+
+
+
+
+
 
