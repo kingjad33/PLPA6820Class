@@ -1,0 +1,82 @@
+---
+title: "JadenKing_DataWrangle_CodeChal"
+output:
+  word_document: default
+  html_document: default
+---
+requires tidyverse package
+```{r}
+library(tidyverse)
+```
+
+read data in
+```{r}
+metadata <- read.csv("metadata.csv")
+diversity <- read.csv("DiversityData.csv")
+```
+
+connect the data frames by column code
+```{r}
+alpha <- data.frame(left_join(metadata, diversity, by = "Code"))
+
+head(alpha)
+```
+
+Calculate Pielou’s evenness index: Pielou’s evenness is an ecological parameter calculated by the Shannon diversity index (column Shannon) divided by the log of the richness column. 
+-	Using mutate, create a new column to calculate Pielou’s evenness index. 
+-	Name the resulting dataframe alpha_even.
+
+```{r}
+alpha_even <- data.frame(mutate(alpha, Peven = shannon/(log(richness))))
+
+head(alpha_even)
+```
+
+Using tidyverse language of functions and the pipe, use the summarise function and tell me the mean and standard error evenness grouped by crop over time.
+-	Start with the alpha_even dataframe
+-	Group the data: group the data by Crop and Time_Point.
+-	Summarize the data: Calculate the mean, count, standard deviation, and standard error for the even variable within each group.
+-	Name the resulting dataframe alpha_average
+```{r}
+alpha_average<- data.frame(alpha_even %>%
+  group_by(Crop, Time_Point) %>%
+  summarize(Mean.even = mean(Peven),
+            n=n(),
+            sd.dev = sd(Peven))%>%
+  mutate(std.err = sd.dev/sqrt(n)))
+
+head(alpha_average)
+```
+
+Calculate the difference between the soybean column, the soil column, and the difference between the cotton column and the soil column
+-	Start with the alpha_average dataframe
+-	Select relevant columns: select the columns Time_Point, Crop, and mean.even.
+-	Reshape the data: Use the pivot_wider function to transform the data from long to wide format, creating new columns for each Crop with values from mean.even.
+-	Calculate differences: Create new columns named diff.cotton.even and diff.soybean.even by calculating the difference between Soil and Cotton, and Soil and Soybean, respectively.
+-	Name the resulting dataframe alpha_average2
+```{r}
+alpha_average2 <- data.frame(alpha_average %>%
+  select(Time_Point,Crop,Mean.even) %>%
+  pivot_wider(names_from = Crop, values_from = Mean.even) %>%
+  mutate(diff.cotton.even = Soil - Cotton) %>%
+  mutate(diff.soybean.even = Soil - Soybean))
+
+head(alpha_average2)
+```
+
+Connecting it to plots
+- Start with the alpha_average2 dataframe
+- Select relevant columns: select the columns Time_Point, diff.cotton.even, and diff.soybean.even.
+-	Reshape the data: Use the pivot_longer function to transform the data from wide to long format, creating a new column named diff that contains the values from diff.cotton.even and diff.soybean.even
+-	Create the plot: Use ggplot and geom_line() with ‘Time_Point’ on the x-axis, the column ‘values’ on the y-axis, and different colors for each ‘diff’ category. The column named ‘values’ come from the pivot_longer. The resulting plot should look like the one to the right. 
+```{r}
+alpha_average2 %>%
+  select(Time_Point, diff.cotton.even, diff.soybean.even) %>%
+  pivot_longer(c(diff.cotton.even, diff.soybean.even),names_to="diff") %>%
+  ggplot(aes(x= Time_Point, y= value, color= diff)) +
+  geom_line() +
+  theme_classic() +
+  xlab("Time (hrs)") +
+  ylab("Difference from soil in Pielou's evenness")
+```
+
