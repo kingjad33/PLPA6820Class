@@ -4,6 +4,8 @@ output:
   word_document: default
   html_document: default
 ---
+[clickable link to .docx](https://github.com/kingjad33/PLPA6820Class/blob/main/Code%20Challenge%205/DataWrangle_CodeChal.docx)
+
 requires tidyverse package
 ```{r}
 library(tidyverse)
