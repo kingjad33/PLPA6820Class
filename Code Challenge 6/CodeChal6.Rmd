@@ -1,10 +1,10 @@
 ---
 title: "CodeChal6"
 output:
-  md_document: 
-    variant: gfm
   word_document: 
     toc: true
+  md_document: 
+    variant: gfm
 date: "2025-03-27"
 ---
 
@@ -131,5 +131,6 @@ view(distance.df)
   
 7. 2 pts. Commit and push a gfm .md file to GitHub inside a directory called Coding Challenge 6. Provide me a link to your github written as a clickable link in your .pdf or .docx
 
+[grm.md file](https://github.com/kingjad33/PLPA6820Class/blob/main/Code%20Challenge%206/CodeChal6.md)
 
 
