@@ -187,8 +187,16 @@ for(i in seq_along(nm)){
   results_i <- data.frame(lat_longall(nm[[i]]))
   distance.df <- rbind.data.frame(distance.df, results_i)
 }
-view(distance.df)
+head(distance.df)
 ```
+
+    ##   lat_longall.nm..i...
+    ## 1            1367.8540
+    ## 2            3051.8382
+    ## 3            1045.5213
+    ## 4             916.4138
+    ## 5             993.0298
+    ## 6            1056.0217
 
 7.  2 pts. Commit and push a gfm .md file to GitHub inside a directory
     called Coding Challenge 6. Provide me a link to your github written

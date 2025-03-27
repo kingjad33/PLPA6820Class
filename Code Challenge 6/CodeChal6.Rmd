@@ -124,7 +124,7 @@ for(i in seq_along(nm)){
   results_i <- data.frame(lat_longall(nm[[i]]))
   distance.df <- rbind.data.frame(distance.df, results_i)
 }
-view(distance.df)
+head(distance.df)
 
 ```
 
