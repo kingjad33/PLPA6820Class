@@ -1,0 +1,33 @@
+---
+title: "CodeChal6"
+output:
+  word_document: default
+  html_document: default
+date: "2025-03-27"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. 2 pts. Regarding reproducibility, what is the main point of writing your own functions and iterations? 
+    + To create functions that can complete the problems needed to limit copy paste errors for reproducibility because the function can do all the work with 1 press in R
+
+2. 2 pts. In your own words, describe how to write a function and a for loop in R and how they work. Give me specifics like syntax, where to write code, and how the results are returned. 
+  + Function: name the object and then use the word 'function' to start the function, with the word of input in () after function. Example- function(word). the use { }
+to include your equation that you want the function to use. The function will then input whatever number you put into the object name wherever you have the word in the equation.
+  + For loops: Allow you to run a function over a set number of numbers. To do this, you use for(i in #:#) with the range in numbers being what you want.Then you can include functions or equations that you want the loop to run. The loop will run all the numbers specified through the loop and will put out whatever you tell it to- print, df, etc. 
+    
+3. 2 pts. Read in the Cities.csv file from Canvas using a relative file path.
+
+4. 6 pts. Write a function to calculate the distance between two pairs of coordinates based on the Haversine formula (see below). The input into the function should be lat1, lon1, lat2, and lon2. The function should return the object distance_km. All the code below needs to go into the function.
+
+5. 5 pts. Using your function, compute the distance between Auburn, AL and New York City 
+  +	Subset/filter the Cities.csv data to include only the latitude and longitude values you need and input as input to your function. 
+  +	The output of your function should be 1367.854 km
+
+6. 6 pts. Now, use your function within a for loop to calculate the distance between all other cities in the data. The output of the first 9 iterations is shown below.
+  +Bonus point if you can have the output of each iteration append a new row to a dataframe, generating a new column of data. In other words, the loop should create a dataframe with three columns called city1, city2, and distance_km, as shown below. The first six rows of the dataframe are shown below.
+  
+7. 2 pts. Commit and push a gfm .md file to GitHub inside a directory called Coding Challenge 6. Provide me a link to your github written as a clickable link in your .pdf or .docx
+
