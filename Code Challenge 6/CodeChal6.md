@@ -193,3 +193,6 @@ view(distance.df)
 7.  2 pts. Commit and push a gfm .md file to GitHub inside a directory
     called Coding Challenge 6. Provide me a link to your github written
     as a clickable link in your .pdf or .docx
+
+[gfm.md
+file](https://github.com/kingjad33/PLPA6820Class/blob/main/Code%20Challenge%206/CodeChal6.md)
